@@ -195,11 +195,11 @@ public class DriveTrain extends BaseHardware {
         drivetrain_mode_Current = Mode.TELEOP;
 
         //Cap the power limit for the wheels
-       double lPower = CommonLogic.CapMotorPower(TargetMotorPowerLeft,
+       double lPower = CommonLogic.CapValue(TargetMotorPowerLeft,
                 minPower, maxPower);
 
         //Cap the power limit for the wheels
-        double rPower = CommonLogic.CapMotorPower(TargetMotorPowerRight,
+        double rPower = CommonLogic.CapValue(TargetMotorPowerRight,
                 minPower, maxPower);
 
 
@@ -241,10 +241,10 @@ public class DriveTrain extends BaseHardware {
         double rightPower = TargetMotorPowerRight + (delta * chassis_KPGyroStraight);
 
 
-        leftPower = CommonLogic.CapMotorPower(leftPower,
+        leftPower = CommonLogic.CapValue(leftPower,
                 Settings.REV_MIN_POWER, Settings.REV_MAX_POWER);
 
-        rightPower = CommonLogic.CapMotorPower(rightPower,
+        rightPower = CommonLogic.CapValue(rightPower,
                 Settings.REV_MIN_POWER, Settings.REV_MAX_POWER);
 
         RobotLog.aa(TAGChassis, "delta: " + delta);
@@ -320,8 +320,8 @@ public class DriveTrain extends BaseHardware {
         TargetHeadingDeg = headingDeg;
         RobotLog.aa(TAGChassis, "cmdTurnByGyro target: " + TargetHeadingDeg);
 
-        double lspeed = CommonLogic.CapMotorPower(L_Speed,Settings.REV_MIN_POWER, Settings.REV_MAX_POWER);
-        double rspeed = CommonLogic.CapMotorPower(R_Speed, Settings.REV_MIN_POWER,Settings.REV_MAX_POWER);
+        double lspeed = CommonLogic.CapValue(L_Speed,Settings.REV_MIN_POWER, Settings.REV_MAX_POWER);
+        double rspeed = CommonLogic.CapValue(R_Speed, Settings.REV_MIN_POWER,Settings.REV_MAX_POWER);
 
         LDM1.setPower(lspeed);
         LDM2.setPower(lspeed);
