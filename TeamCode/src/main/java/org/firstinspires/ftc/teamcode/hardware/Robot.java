@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-public class RobotComp extends BaseHardware {
+public class Robot extends BaseHardware {
     public DriveTrain driveTrain = new DriveTrain();
     public Sweeper sweeper = new Sweeper();
     public Carousel carousel = new Carousel();
